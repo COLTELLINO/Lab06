@@ -9,6 +9,7 @@ import it.unibo.collections.social.impl.SocialNetworkUserImpl;
 import it.unibo.collections.social.impl.UserImpl;
 
 import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * This is going to act as a test for
@@ -33,26 +34,23 @@ public final class TestSocialNetworkUser {
      *            ignored
      */
     public static void main(final String... args) {
-        /*
-         * Create 5 social network users (SocialNetworkUser):
-         * 
-         * * Kevin Bacon, kbacon, 56
-         * 
-         * * Denzel Washington, dwashington, 59
-         * 
-         * * Malcom Gladwell, mgladwell, 51
-         * 
-         * * Nicholas Taleb, ntaleb, 54
-         * 
-         * And one regular UserImpl (User)
-         * 
-         * * Adam Smith, asmith, (no age)
-         */
-        final SocialNetworkUser<User> kbacon = null; //TODO
-        final SocialNetworkUser<User> dwashington = null; //TODO
-        final SocialNetworkUser<User> mgladwell = null; //TODO
-        final SocialNetworkUser<User> ntaleb = null; //TODO
-        final User asmith = null; //TODO
+        // Create 5 social network users (SocialNetworkUser)
+        // Kevin Bacon, kbacon, 56
+        final SocialNetworkUser<User> kbacon = new SocialNetworkUserImpl<>("Kevin", "Bacon", "kbacon", 56, new HashMap<>());
+        
+        // Denzel Washington, dwashington, 59
+        final SocialNetworkUser<User> dwashington = new SocialNetworkUserImpl<>("Denzel", "Washington", "dwashington", 59, new HashMap<>());
+        
+        // Malcom Gladwell, mgladwell, 51
+        final SocialNetworkUser<User> mgladwell = new SocialNetworkUserImpl<>("Malcom", "Gladwell", "mgladwell", 51, new HashMap<>());
+        
+        // Nicholas Taleb, ntaleb, 54
+        final SocialNetworkUser<User> ntaleb = new SocialNetworkUserImpl<>("Nicholas", "Taleb", "ntaleb", 54, new HashMap<>());
+        
+        // One regular UserImpl (User)
+        // Adam Smith, asmith, (no age)
+        final User asmith = new UserImpl("Adam", "Smith", "asmith", -1);  // Using -1 to indicate no age
+
         /*
          * Make people follow each other
          */
